@@ -7,10 +7,9 @@ import { useFormik } from 'formik';
 
 import Button from '../components/Button';
 import FormGroupInput from '../components/FormGroupInput';
-import Logo from '../components/Logo';
 import Freedom from '../components/illustrations/Freedom';
+import Logo from '../components/Logo';
 import { LandingContainer as Container } from '../components/Layouts';
-
 import { Palette } from '../constants';
 
 
@@ -30,7 +29,7 @@ const Content = styled.div`
 `;
 
 const Aside = styled.aside`
-  background-color: ${ Palette.lightyellow };
+  background-color: ${ Palette.peachpuff };
   grid-area: 1 / 1 / 4 / 3;
   padding: 60px;
 
@@ -52,7 +51,7 @@ const Header = styled.div`
   font-size: 0.85rem;
 `;
 
-const SignUp = () => {
+const SignUp = (): React.ReactElement => {
   const navigate = useNavigate();
 
   const form = useFormik({
@@ -62,8 +61,7 @@ const SignUp = () => {
       confirmPassword: '',
     },
     onSubmit: (values) => {
-      console.log(JSON.stringify(values, null, 2));
-      toast('Sign In successful!');
+      toast(`Welcome ${ values.userName }!`);
 
       setTimeout(() => {
         navigate('/kakeibo');

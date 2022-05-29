@@ -52,7 +52,7 @@ const Input = styled.input`
   min-width: 350px;
 `;
 
-const FormGroupInput = (props: Props) => {
+const FormGroupInput = (props: Props): React.ReactElement => {
   const dirty = get(props.form.touched, props.name, false);
   const value = get(props.form.values, props.name);
   const invalid = dirty && get(props.form.errors, props.name, false);

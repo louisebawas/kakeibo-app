@@ -17,7 +17,7 @@ const navs = [
   },
 ];
 
-const Home = () => (
+const Home = (): React.ReactElement => (
   <Container>
     <NavBarContainer>
       <NavBar>

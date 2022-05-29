@@ -41,7 +41,7 @@ const StyledButton = styled.button`
   }
 `;
 
-const Button = (props: Props) => {
+const Button = (props: Props): React.ReactElement => {
   const color = props.color ? Palette[props.color] : Palette.transparent;
 
   return (

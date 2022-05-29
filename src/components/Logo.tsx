@@ -18,7 +18,7 @@ const StyledLogo = styled.div`
   } 
 `;
 
-const Logo = () => (
+const Logo = (): React.ReactElement => (
   <StyledLogo>
     <Link to="/">kakeibo</Link>
   </StyledLogo>

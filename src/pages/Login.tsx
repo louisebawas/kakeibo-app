@@ -5,10 +5,10 @@ import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { useFormik } from 'formik';
 
+import Asking from '../components/illustrations/Asking';
 import Button from '../components/Button';
 import FormGroupInput from '../components/FormGroupInput';
 import Logo from '../components/Logo';
-import Asking from '../components/illustrations/Asking';
 import { LandingContainer as Container } from '../components/Layouts';
 import { Palette } from '../constants';
 
@@ -29,7 +29,7 @@ const Content = styled.div`
 `;
 
 const Aside = styled.aside`
-  background-color: ${ Palette.peachpuff };
+  background-color: ${ Palette.lightyellow };
   grid-area: 1 / 1 / 4 / 3;
   padding: 60px;
 
@@ -51,7 +51,7 @@ const Header = styled.div`
   font-size: 0.85rem;
 `;
 
-const Login = () => {
+const Login = (): React.ReactElement => {
   const navigate = useNavigate();
 
   const form = useFormik({
@@ -60,9 +60,7 @@ const Login = () => {
       password: '',
     },
     onSubmit: (values) => {
-      console.log(JSON.stringify(values, null, 2));
-
-      toast('Login Successful!');
+      toast(`Welcome back ${ values.userName }!`);
 
       setTimeout(() => {
         navigate('/kakeibo');
